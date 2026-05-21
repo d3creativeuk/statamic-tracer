@@ -1,0 +1,32 @@
+{
+    "name": "d3creative/statamic-utm-builder",
+    "description": "A Statamic fieldtype that builds UTM-tagged URLs for entries: social, newsletter, and paid ads.",
+    "type": "statamic-addon",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stephen Meehan",
+            "email": "s.meehan@d3creative.uk"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "statamic/cms": "^5.0|^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "D3Creative\\UtmBuilder\\": "src/"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "UTM Builder",
+            "description": "Builds UTM-tagged URLs for entries."
+        },
+        "laravel": {
+            "providers": [
+                "D3Creative\\UtmBuilder\\ServiceProvider"
+            ]
+        }
+    }
+}
