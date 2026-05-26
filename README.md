@@ -21,7 +21,7 @@ All three share a single `utm_content` value (defaults to the entry slug; can be
 composer require d3creative/statamic-utm-builder
 ```
 
-Then add a **Tracer** field to any blueprint via the Statamic CP. The field renders on the entry edit screen for any entry whose collection produces a public URL.
+Then add a **Tracer (UTM Builder)** field to any blueprint via the Statamic CP. The field renders on the entry edit screen for any entry whose collection produces a public URL.
 
 ## Configuration
 
