@@ -8,7 +8,7 @@ class Tracer extends Fieldtype
 {
     protected static $handle = 'tracer';
 
-    protected static $title = 'Tracer';
+    protected static $title = 'Tracer (UTM Builder)';
 
     protected $categories = ['special'];
 

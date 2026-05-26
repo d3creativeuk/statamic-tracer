@@ -1,5 +1,7 @@
 # Tracer by D3 Creative
 
+![Tracer by D3 Creative](art/tracer-art.jpg)
+
 **A UTM Builder fieldtype that generates UTM-tagged share URLs for Statamic entries, directly from the Control Panel.**
 
 Tracer adds a UTM Builder fieldtype to any blueprint that turns entry edit screens into a campaign URL builder. Think of it as [Google's Campaign URL Builder](https://ga-dev-tools.google/campaign-url-builder/) baked into Statamic, so editors can grab a ready-tagged link without leaving the entry they're publishing.
