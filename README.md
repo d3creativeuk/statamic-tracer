@@ -1,37 +1,37 @@
-# UTM Builder for Statamic
+# Tracer by D3 Creative
 
-A Statamic fieldtype that **generates** UTM-tagged URLs for entries, ready to copy and paste into a tweet, a newsletter, or a Google Ads campaign. Think of it as [Google's Campaign URL Builder](https://ga-dev-tools.google/campaign-url-builder/) baked into your entry edit screen.
+**A UTM Builder fieldtype that generates UTM-tagged share URLs for Statamic entries, directly from the Control Panel.**
+
+Tracer adds a UTM Builder fieldtype to any blueprint that turns entry edit screens into a campaign URL builder. Think of it as [Google's Campaign URL Builder](https://ga-dev-tools.google/campaign-url-builder/) baked into Statamic, so editors can grab a ready-tagged link without leaving the entry they're publishing.
 
 Three sections in one field:
 
 - **Social** — one Copy button per platform (X, LinkedIn, BlueSky, Threads by default; configurable).
-- **Newsletter** — `utm_source=newsletter&utm_medium=email` with editable `utm_campaign` + optional `utm_id`.
+- **Newsletter** — `utm_source=newsletter&utm_medium=email` with editable `utm_campaign` and optional `utm_id`.
 - **Paid Ads** — free-form `utm_source` / `utm_medium` plus `utm_campaign` / `utm_term` / `utm_id`.
 
-All three share a single `utm_content` (defaults to the entry slug; can be overridden). Inputs auto-normalize to lowercase with underscores.
+All three share a single `utm_content` value (defaults to the entry slug; can be overridden per-entry). Inputs auto-normalize to lowercase with underscores so your analytics stays consistent.
 
-> **Looking to *read* UTM params from incoming visitor traffic** (e.g. to personalize content based on the campaign that brought someone in)? That's a different problem; see [toni-suarez/utm-parameter](https://statamic.com/addons/toni-suarez/utm-parameter). The two addons are complementary: this one builds the URLs you put out; that one reads them when those clicks come back in.
 
 ## Installation
 
 ```bash
 composer require d3creative/statamic-utm-builder
-php artisan vendor:publish --tag=statamic-utm-builder --force
 ```
 
-Then add a UTM Builder field to any blueprint via the Statamic CP.
+Then add a **Tracer** field to any blueprint via the Statamic CP. The field renders on the entry edit screen for any entry whose collection produces a public URL.
 
 ## Configuration
 
 Per-field config in the blueprint editor:
 
-- Toggle each section on or off independently.
-- Edit the Social platforms list (label + utm_source per platform).
+- Toggle each section (Social / Newsletter / Paid Ads) on or off independently.
+- Edit the Social platforms list (label + `utm_source` per platform).
 - Override the default `utm_medium` values for Social and Newsletter.
 
 ## How values persist
 
-The field stores a nested object:
+The field stores a nested object on the entry:
 
 ```json
 {
@@ -41,17 +41,17 @@ The field stores a nested object:
 }
 ```
 
-When all fields are empty, the field stores `null`.
+When every input is empty the field stores `null`, so blueprints without active campaign data stay clean.
 
-## Local development
+## Requirements
 
-```bash
-npm install
-npm run build      # produces public/build/
-```
+- PHP 8.2+
+- Statamic 6.x
 
-The package depends on `@statamic/cms` from a sibling Statamic site at `../d3creative` for build-time stubs that resolve `window.__STATAMIC__` at runtime. Adjust the file path in `package.json` if your sibling Statamic project is elsewhere.
+## Support
+
+This addon is maintained by [D3 Creative](https://d3creative.uk). For enquiries about managed Statamic maintenance, visit [d3creative.uk/services/statamic-maintenance](https://d3creative.uk/services/statamic-maintenance).
 
 ## License
 
-MIT
+Released under the [MIT License](LICENSE).

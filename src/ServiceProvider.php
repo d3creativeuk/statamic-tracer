@@ -1,6 +1,6 @@
 <?php
 
-namespace D3Creative\UtmBuilder;
+namespace D3Creative\Tracer;
 
 use Statamic\Providers\AddonServiceProvider;
 

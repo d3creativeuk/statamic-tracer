@@ -1,5 +1,5 @@
 {
-    "name": "statamic-utm-builder",
+    "name": "statamic-tracer",
     "private": true,
     "type": "module",
     "scripts": {

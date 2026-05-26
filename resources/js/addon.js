@@ -1,5 +1,5 @@
-import UtmBuilderFieldtype from './components/UtmBuilderFieldtype.vue';
+import TracerFieldtype from './components/TracerFieldtype.vue';
 
 Statamic.booting(() => {
-    Statamic.$components.register('utm_builder-fieldtype', UtmBuilderFieldtype);
+    Statamic.$components.register('tracer-fieldtype', TracerFieldtype);
 });

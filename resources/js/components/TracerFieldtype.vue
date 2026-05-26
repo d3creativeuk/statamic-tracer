@@ -1,5 +1,5 @@
 <template>
-    <div class="utm-builder">
+    <div class="tracer">
         <template v-if="baseUrl && defaultContent">
             <div v-if="sections.social" class="border border-gray-200 rounded p-4 mb-4">
                 <h4 class="text-sm font-semibold mb-3">Social</h4>

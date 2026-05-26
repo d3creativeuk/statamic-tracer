@@ -1,18 +1,20 @@
 <?php
 
-namespace D3Creative\UtmBuilder\Fieldtypes;
+namespace D3Creative\Tracer\Fieldtypes;
 
 use Statamic\Fields\Fieldtype;
 
-class UtmBuilder extends Fieldtype
+class Tracer extends Fieldtype
 {
-    protected static $handle = 'utm_builder';
+    protected static $handle = 'tracer';
+
+    protected static $title = 'Tracer';
 
     protected $categories = ['special'];
 
     public function icon()
     {
-        return 'globe';
+        return 'link';
     }
 
     public function configFieldItems(): array
